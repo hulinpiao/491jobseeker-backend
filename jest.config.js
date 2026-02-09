@@ -8,6 +8,9 @@ module.exports = {
     '!src/**/*.d.ts',
     '!src/**/*.test.ts',
   ],
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'json', 'html'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
