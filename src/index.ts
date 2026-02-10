@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectDatabase } from './config/database';
 import jobRoutes from './routes/jobRoutes';
+import authRoutes from './routes/authRoutes';
 
 // Load environment variables
 import path from 'path';
@@ -23,6 +24,7 @@ app.get('/health', (_req, res) => {
 
 // API routes
 app.use('/api', jobRoutes);
+app.use('/api/auth', authRoutes);
 
 // Start server
 async function startServer(): Promise<void> {
