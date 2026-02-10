@@ -9,11 +9,11 @@ import User from '../models/User';
 describe('Auth API', () => {
   beforeAll(async () => {
     await connectDatabase();
-  });
+  }, 30000);
 
   afterAll(async () => {
     await disconnectDatabase();
-  });
+  }, 30000);
 
   beforeEach(async () => {
     // Clean up users collection before each test
