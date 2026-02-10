@@ -10,6 +10,9 @@ export interface IUserProfile {
   visaExpiry?: Date;
   linkedInUrl?: string;
   preferredLocation?: string[];
+  resumeId?: string;
+  resumeFileName?: string;
+  resumeUploadDate?: Date;
 }
 
 /**
@@ -85,6 +88,9 @@ const UserSchema = new Schema<IUser>(
       visaExpiry: Date,
       linkedInUrl: String,
       preferredLocation: [String],
+      resumeId: String,
+      resumeFileName: String,
+      resumeUploadDate: Date,
     },
   },
   {
