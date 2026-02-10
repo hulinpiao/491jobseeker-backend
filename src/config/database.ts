@@ -13,8 +13,14 @@ export async function connectDatabase(): Promise<void> {
   }
 }
 
-export function disconnectDatabase(): Promise<void> {
-  return mongoose.disconnect();
+export async function disconnectDatabase(): Promise<void> {
+  try {
+    await mongoose.connection.close();
+    console.log('Disconnected from MongoDB');
+  } catch (error) {
+    console.error('Error disconnecting from MongoDB:', error);
+    throw error;
+  }
 }
 
 export { COLLECTION_NAME };
