@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectDatabase } from './config/database';
-import jobRoutes from './routes/jobRoutes';
+import filteredJobRoutes from './routes/filteredJobRoutes';
 import authRoutes from './routes/authRoutes';
 import resumeRoutes from './routes/resumeRoutes';
 
@@ -24,7 +24,7 @@ app.get('/health', (_req, res) => {
 });
 
 // API routes
-app.use('/api', jobRoutes);
+app.use('/api', filteredJobRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/resume', resumeRoutes);
 
