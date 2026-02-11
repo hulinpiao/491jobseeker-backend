@@ -5,6 +5,7 @@ import { connectDatabase } from './config/database';
 import filteredJobRoutes from './routes/filteredJobRoutes';
 import authRoutes from './routes/authRoutes';
 import resumeRoutes from './routes/resumeRoutes';
+import pipelineRoutes from './routes/pipelineRoutes';
 
 // Load environment variables
 import path from 'path';
@@ -27,6 +28,7 @@ app.get('/health', (_req, res) => {
 app.use('/api', filteredJobRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/resume', resumeRoutes);
+app.use('/api/pipeline', pipelineRoutes);
 
 // Start server
 async function startServer(): Promise<void> {
